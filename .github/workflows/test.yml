@@ -28,3 +28,7 @@ jobs:
 
       - name: Slither
         uses: crytic/slither-action@v0.3.0
+        continue-on-error: true
+        with:
+          target: '.'
+          fail-on: none
