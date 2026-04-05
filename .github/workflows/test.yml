@@ -11,11 +11,12 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-        with:
-          submodules: recursive
 
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
+
+      - name: Install dependencies
+        run: forge install foundry-rs/forge-std --no-commit
 
       - name: Build
         run: forge build
